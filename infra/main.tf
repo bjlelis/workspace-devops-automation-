@@ -29,7 +29,6 @@ resource "azurerm_public_ip" "public_ip" {
   sku                 = "Basic"
 }
 
-
 resource "azurerm_network_interface" "nic" {
   name                = "nic-vm"
   location            = azurerm_resource_group.rg.location
@@ -72,7 +71,6 @@ resource "azurerm_network_security_group" "nsg" {
     destination_address_prefix = "*"
   }
 }
-
 
 resource "azurerm_network_interface_security_group_association" "nsg_assoc" {
   network_interface_id      = azurerm_network_interface.nic.id
